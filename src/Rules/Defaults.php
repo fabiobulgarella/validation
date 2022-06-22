@@ -33,7 +33,11 @@ class Defaults extends Rule implements ModifyValue
      */
     public function modifyValue($value)
     {
-        return $this->isEmptyValue($value) ? $this->parameter('default') : $value;
+        $default = $this->parameter('default');
+        if (strcmp($default, '__NULL__') == 0) {
+            $default = null;
+        }
+        return $this->isEmptyValue($value) ? $default : $value;
     }
 
     /**
