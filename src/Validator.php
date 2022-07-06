@@ -164,6 +164,7 @@ class Validator
             'nullable'                  => new Rules\Nullable,
             'length'                    => new Rules\Length,
             'float'                     => new Rules\FloatVal,
+            'partita_iva'               => new Rules\PartitaIVA,
         ];
 
         foreach ($baseValidator as $key => $validator) {
